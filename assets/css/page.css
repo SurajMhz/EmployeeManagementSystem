@@ -7,25 +7,12 @@
 body {
     background-color: rgba(189, 252, 116, 0.128);
 }
+/* 
+a{ all: unset;} */
 
-.headCard,
-.searchbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.headCard button {
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-}
 
-/* .headCard button:hover {
+/* .headCard button:hover {a
     background-color: #red;
 } */
 
@@ -36,6 +23,17 @@ body {
     padding: 15px 20px;
     border-radius: 10px;
     margin: 20px;
+}
+.headCard .AddButton {
+    /* display: none; */
+    /* text-decoration: none; */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .searchbar {

@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(189, 252, 116, 0.128);
+}
+
+.Container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border: blue 2px solid;
+    border-radius: 12px;
+    height: 600px;
+    width: 500px;
+    font-size: larger;
+    padding: 20px;
+    background-color: rgba(188, 252, 116, 0.664);
+}
+
+.Top {
+    margin-bottom: 44px;
+}
+
+.label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.InputBox {
+    position: relative;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 8px;
+    width: 320px;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #aaa;
+    border-radius: 14px;
+    box-sizing: border-box;
+    background-color: white;
+}
+.submit{
+    position: relative;
+    margin-top: 45px;
+    margin-left: 4px;
+    margin-bottom: 8px;
+    width: 320px;
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 14px;
+    box-sizing: border-box;
+    background-color: rgb(194, 248, 236);
+}
+.submit:hover{
+    background-color: rgba(0, 250, 196, 0.966);
+}
+.Form p{
+    margin-bottom: 10px;
+    font-size: 24px;
+
+}
+.Radio{
+    font-size: larger;
+    margin-bottom: 10px;
+}
+
+.Role{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+#Role{
+  width: 200px;      /* increase width */
+  height: 40px;      /* increase height */
+  font-size: 16px;   /* bigger text */
+  padding: 5px;      /* inside spacing */
+
+}

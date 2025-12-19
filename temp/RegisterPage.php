@@ -27,7 +27,7 @@
         background-color: #aab7bb;
     }
 
-    .LoginForm {
+    .RegisterForm {
         display: flex;
         align-content: center;
         /* justify-content: space-between; */
@@ -47,17 +47,19 @@
 </style>
 
 <body>
-    <form action="ValdationPage.php" method="get" class="LoginForm">
-        <h1>LOG IN</h1>
+    <form action="AddLoginInfo.php" method="get" class="RegisterForm">
+        <h1>New Register</h1>
         <label for="User">Enter Your UserName</label>
         <input type="text" id="User" name="User" required>
         <br>
-        <label for="Password">Enter Your Password</label>
+        <label for="Password">Create Your Password</label>
         <input type="Password" id="Password" name="Password" required>
         <br>
-        <button>Log In</button>
-
+        <button type="submit">Register</button>
+        <a href="LoginPage.php">Already have an account?</a>
+        
     </form>
+    <!-- <h3><?php# if(isset($_GET['invalid'])){echo "Invalid Data Input";};?></h3> -->
 </body>
 
 </html>

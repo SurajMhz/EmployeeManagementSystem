@@ -1,4 +1,3 @@
-login - php page for validation login- dashboard
-dashboard- image upload
-
-
+login datas in file:
+session - User Name Call in dashboard
+cookies:

@@ -47,7 +47,9 @@
 </style>
 
 <body>
-    <form action="ValdationPage.php" method="get" class="LoginForm">
+<!-- action="ValdationPage.php" method="get/post" to check login from file -->
+ <!-- action="LoginFromDatabase.php" method="post" to check login from database -->
+    <form action="LoginFromDatabase.php" method="post" class="LoginForm">
         <h1>LOG IN</h1>
         <label for="User">Enter Your UserName</label>
         <input type="text" id="User" name="User" required>
@@ -56,7 +58,7 @@
         <input type="Password" id="Password" name="Password" required>
         <br>
         <button type="submit">Log In</button>
-        <a href="RegisterPage.php">Don't have an account?</a>
+        <a href="../Register/RegisterPage.php">Don't have an account?</a>
         
     </form>
     <h3><?php

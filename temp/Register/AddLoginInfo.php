@@ -7,6 +7,6 @@ if(isset($_GET['User']) && isset($_GET['Password'])){
 	fwrite($file,$user.",".$password."\n");
 	fclose($file);
 
-	header("Location: loginPage.php?sucess=true");
+	header("Location: ../Login/LoginPage.php?sucess=true");
 }
 ?>

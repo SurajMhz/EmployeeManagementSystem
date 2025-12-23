@@ -4,7 +4,7 @@ $Password=$_GET['Password'];
 
 $users=[];
 
-$file=fopen("LoginInfo.txt","r") or die("Unable to open file");
+$file=fopen("../Register/LoginInfo.txt","r") or die("Unable to open file");
 
 while(($line=fgets($file))!==false){
 	$data=explode(",",$line);
@@ -28,10 +28,10 @@ foreach($users as $u=>$p){
 if($valid){
     session_start();
     $_SESSION['username']=$UserName;
-	header("Location: Dashboard.php");
+	header("Location: ../Dashboard.php");
 	exit();
 }else{
-	header("Location: loginPage.php?invalid=true");
+	header("Location: LoginPage.php?invalid=true");
 	exit();
 }
 ?>

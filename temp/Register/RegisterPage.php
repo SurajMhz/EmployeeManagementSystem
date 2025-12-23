@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +48,9 @@
 </style>
 
 <body>
-    <form action="AddLoginInfo.php" method="get" class="RegisterForm">
+    <!-- action="AddLoginInfo.php" method="get/post" to save login information in text file -->
+      <!-- action="AddToDatabase.php" method="post" to save login information in database -->
+    <form action="AddToDatabase.php" method="Post" class="RegisterForm">
         <h1>New Register</h1>
         <label for="User">Enter Your UserName</label>
         <input type="text" id="User" name="User" required>
@@ -56,10 +59,13 @@
         <input type="Password" id="Password" name="Password" required>
         <br>
         <button type="submit">Register</button>
-        <a href="LoginPage.php">Already have an account?</a>
+        <a href="../Login/LoginPage.php">Already have an account?</a>
         
     </form>
-    <!-- <h3><?php# if(isset($_GET['invalid'])){echo "Invalid Data Input";};?></h3> -->
+    <h3><?php
+     if(isset($_GET['error'])){echo "Error occurred during registration";};
+     ?></h3>
+
 </body>
 
 </html>

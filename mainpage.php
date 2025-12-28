@@ -1,3 +1,13 @@
+<?php
+include("./DatabaseConnection/databaseconnection.php");
+
+session_start();
+$User = $_SESSION['username'];
+if (!$User) {
+    header("Location: Login/LoginPage.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +20,30 @@
 <body>
     <link rel="stylesheet" href="./assets/css/page.css">
     <header>
+        <h1>Welcome to Dashboard <?php echo $User; ?></h1>
         <div class="headCard">
+            
             <h1>Employee Management System</h1>
             <a href="AddEmployee.php" class="AddButton">+ Add Employee</a>
         </div>
 
     </header>
-    <script>
-        let LocalCheck = JSON.parse(localStorage.getItem("Employees"));
-        let Employees = LocalCheck ? LocalCheck : [];
-    </script>
-    <main>
 
+    <?php
+    require './DatabaseConnection/databaseconnection.php';
+
+    $sql = "SELECT * FROM Users";
+    $result = $conn->query($sql);
+    $data = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    }
+    echo "<script>const Employees = " . json_encode($data) . "; console.log(Employees);</script>";
+    ?>
+
+    <main>
         <div class="DataContainer"></div>
     </main>
 
@@ -39,7 +61,7 @@
         TopData.classList.add("TopData");
 
         const Name = document.createElement('h3');
-        Name.innerText = Data.Name;
+        Name.innerText = Data.name;
         TopData.appendChild(Name);
 
         const MiddleData = document.createElement('div');
@@ -52,7 +74,7 @@
         const Role = document.createElement('td');
         Role.textContent = "Role";
         const RoleDetail = document.createElement('td');
-        RoleDetail.textContent = Data.Role;
+        RoleDetail.textContent = Data.role;
         row2.appendChild(Role);
         row2.appendChild(RoleDetail);
 
@@ -60,15 +82,15 @@
         const Faculty = document.createElement('td');
         Faculty.textContent = "Faculty";
         const FacultyDetail = document.createElement('td');
-        FacultyDetail.textContent = Data.Faculty;
+        FacultyDetail.textContent = Data.faculty;
         row3.appendChild(Faculty);
         row3.appendChild(FacultyDetail);
 
         const row4 = document.createElement('tr');
         const Manager = document.createElement('td');
-        Manager.textContent = "Manager";
+        Manager.textContent = "Supervisor";
         const ManagerDetail = document.createElement('td');
-        ManagerDetail.textContent = Data.Manager;
+        ManagerDetail.textContent = Data.supervisor;
         row4.appendChild(Manager);
         row4.appendChild(ManagerDetail);
 
@@ -76,23 +98,20 @@
         Table.appendChild(row3);
         Table.appendChild(row4);
 
-        const Email = document.createElement('p');
-        Email.textContent = 'Email@email.email';
+        // const Email = document.createElement('p');
+        // Email.textContent = 'Email@email.email';
 
         MiddleData.appendChild(Table);
-        MiddleData.appendChild(Email);
+        // MiddleData.appendChild(Email);
 
         const BottomData = document.createElement('div');
         BottomData.classList.add("BottomData");
         BottomData.innerHTML = `
-        <input type="button"  value=" Edit">
-        <input type="button" value="Delete">
-    `
-        // const DeleteButton = document.createElement("button");
-        // DeleteButton.textContent = "Delete";
-        // DeleteButton.type = "button";
-        // DeleteButton.addEventListener("click", () => DeleteCard(id));
-        // BottomData.appendChild(DeleteButton);
+    <a href="UpdateEmployee.php?id=${Data.id}">Edit</a>
+    <a href="delete.php?id=${Data.id}">Delete</a>
+`;
+
+
 
         Card.appendChild(TopData);
         Card.appendChild(MiddleData);
@@ -106,11 +125,9 @@
             CardGen(element);
         });
     }
-    Employees.length>0 ?   DisplayAll(Employees) : document.querySelector(".DataContainer").innerHTML ="No Employees";
-  
-
-
-
+    Employees.length > 0
+        ? DisplayAll(Employees)
+        : document.querySelector(".DataContainer").innerHTML = "No Employees";
 </script>
 
 

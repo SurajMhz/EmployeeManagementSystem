@@ -1,4 +1,0 @@
-login datas in file:
-session - User Name Call in dashboard
-cookies
-convert the files system to database;

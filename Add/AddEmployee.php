@@ -21,17 +21,17 @@
 
             <p>Select Faculty:</p>
             <div class="Radio">
-                <label><input type="radio" name="Faculty" value="javascript">Intern</label>
-                <label><input type="radio" name="Faculty" value="python">FrontEnd</label>
-                <label><input type="radio" name="Faculty" value="java">BackEnd</label>
-                <label><input type="radio" name="Faculty" value="c">IT-Support</label>
+                <label><input type="radio" name="Faculty" value="javascript">javascript</label>
+                <label><input type="radio" name="Faculty" value="python">python</label>
+                <label><input type="radio" name="Faculty" value="java">java</label>
+                <label><input type="radio" name="Faculty" value="c">c</label>
             </div>
             <label class="Role"for="Role">Choose Role:
                 <select id="Role" name="Role" required>
                     <option value="" disabled selected hidden>-- Select One --</option>
                     <option value="Client_Handler">Client_Handler</option>
                     <option value="IT_Support">IT_Support</option>
-                    <option value="Inter">Intern</option>
+                    <option value="Intern">Intern</option>
                     <option value="Coach">Coach</option>
                     <option value="Supervisor">Supervisor</option>
                 </select>

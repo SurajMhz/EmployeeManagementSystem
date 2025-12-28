@@ -1,5 +1,5 @@
 <?php
-require '../database.php';
+require '../DatabaseConnection/database.php';
 session_start();
 
 $UserName=$_POST['User'];
@@ -10,7 +10,7 @@ $result=$conn->query($sql);
 
 if($result && $result->num_rows==1){
 	$_SESSION['username']=$UserName;
-	header("Location: ../Dashboard.php");
+	header("Location: ../mainpage.php");
 	exit();
 }
 

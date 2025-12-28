@@ -1,5 +1,0 @@
-Admin,Password
-aadmin,pass
-fyqaliby,Pa$$w0rd!
-nuqegyl,Pa$$w0rd!
-hydotatiru,Pa$$w0rd!
